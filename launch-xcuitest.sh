@@ -43,7 +43,6 @@ while getopts "tg:k:p:f:r:h" opt; do
     esac
 done
 API_ENDPOINT=https://cloud.testdroid.com
-API_KEY=Uvxt9QOtMVWSBoE00LoCerh2RlSfPLvv
 DEVICE_GROUP_NAME=4-iOSXCUITest-Device
 APP_FOLDER=calculatorUITests-Runner.app
 APP_FILE=/Users/hchukwuji/Documents/workspace/ios-projects/xctest-xcuitest-project/project/app/builds/Build/Products/Release-iphoneos/temporary/calculator.ipa
