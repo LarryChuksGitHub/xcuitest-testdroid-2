@@ -45,7 +45,7 @@ done
 API_ENDPOINT=https://cloud.testdroid.com
 DEVICE_GROUP_NAME=4-iOSXCUITest-Device
 APP_FOLDER=calculatorUITests-Runner.app
-APP_FILE=/Users/hchukwuji/Documents/workspace/ios-projects/xctest-xcuitest-project/project/app/builds/Build/Products/Release-iphoneos/temporary/calculator.ipa
+APP_FILE=/project/app/builds/Build/Products/Release-iphoneos/temporary/calculator.ipa
 
 # Check that -k was given
 if [ -z ${API_KEY} ] ; then
@@ -158,7 +158,7 @@ if [[ ( -z ${UPLOAD} ) && ( ${ZIP_EXISTS} -ne "null" ) ]]; then
 else
   echo "APP_FOLDER is: ${APP_FOLDER}"
   echo "Zipping app folder: ${APP_FOLDER}"
-  cd /Users/hchukwuji/Documents/workspace/ios-projects/xctest-xcuitest-project/project/app/builds/Build/Products/Release-iphoneos
+  cd /project/app/builds/Build/Products/Release-iphoneos
   zip -r -X calculatorUITests-Runner.zip $APP_FOLDER
 
   if [ -z ${calculatorUITests-Runner.zip} ] ; then
