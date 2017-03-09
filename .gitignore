@@ -1,0 +1,6 @@
+*.zip
+*calculatorUITests-Runner.app
+*.ipa
+*temporary
+*Dockerfile
+project/fastlane/Appfile
