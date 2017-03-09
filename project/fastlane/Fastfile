@@ -11,7 +11,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.16.0"
+fastlane_version "2.19.3"
 
 default_platform :ios
 
@@ -28,7 +28,7 @@ platform :ios do
   desc "build for testing"
   lane :buildTesting do
     xcodebuild(
-      derivedDataPath: "app/builds",
+      derivedDataPath: "project/app",
       clean: true,
       scheme: 'calculator',
       destination: 'generic/platform=iOS',
