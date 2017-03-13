@@ -46,7 +46,20 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym # Build your app - more options available
+    gym(
+      clean: true,
+      #workspace: "/Users/hchukwuji/Documents/workspace/ios-projects/xcuitest-github/xctest-xcuitest-project/project/calculator.xcodepro",
+      output_directory: "app",
+      output_name: "calculator.ipa",
+      configuration: "Release",
+      #output_name: "calculatorUITests-Runner.app",
+      scheme: "calculator",
+      #build_path: "app/build",
+      derived_data_path: "app",
+      destination: "generic/platform=iOS",
+      xcargs: "build-for-testing"
+
+    )# Build your app - more options available
     #pilot
 
     # sh "your_script.sh"

@@ -10,3 +10,5 @@ before_install:
 
 script:
 - ./scripts/start_fastlane.sh
+
+after_failure: scripts/save_travis_log.sh
