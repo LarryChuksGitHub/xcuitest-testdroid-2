@@ -2,7 +2,7 @@
 
 KEY_CHAIN=ios-build.keychain
 LIB_KEY=~/Library/Keychains
-LIB_KEY_CHAIN=LIB_KEY/$KEY_CHAIN
+LIB_KEY_CHAIN=LIB_KEY/${KEY_CHAIN}
 security create-keychain -p travis $KEY_CHAIN
 # Make the keychain the default so identities are found
 security default-keychain -s $KEY_CHAIN
