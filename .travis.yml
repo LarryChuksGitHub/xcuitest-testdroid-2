@@ -9,6 +9,7 @@ before_install:
   - gem update fastlane --no-ri --no-rdoc --no-document
 
 script:
+- ./scripts/add-keys.sh
 - ./scripts/start_fastlane.sh
 
 after_failure: scripts/save_travis_log.sh
