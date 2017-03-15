@@ -16,7 +16,7 @@ security set-keychain-settings -t 3600 -u $KEY_CHAIN
 #security import ./scripts/certs/SE.p12 -k $LIB_KEY_CHAIN -T /usr/bin/codesign
 security import ./scripts/certs/apple.cer -k $LIB_KEY_CHAIN -T /usr/bin/codesign
 security import ./scripts/certs/se-dist.cer -k $LIB_KEY_CHAIN -T /usr/bin/codesign
-security import ./scripts/certs/se-dist-key.p12 -k $LIB_KEY_CHAIN -T /usr/bin/codesign
+security import ./scripts/certs/se-dist-key.p12 -k $LIB_KEY_CHAIN -P $KEY_PASSWORD -T /usr/bin/codesign
 #security import ./scripts/certs/dist.cer -k $LIB_KEY_CHAIN -T /usr/bin/codesign
 #security import ./scripts/certs/dist.p12 -k $LIB_KEY_CHAIN -P $KEY_PASSWORD -T /usr/bin/codesign
 
