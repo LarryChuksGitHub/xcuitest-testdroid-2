@@ -19,4 +19,5 @@ security import ./scripts/certs/dist.cer -k $LIB_KEY_CHAIN -T /usr/bin/codesign
 security import ./scripts/certs/dist.p12 -k $LIB_KEY_CHAIN -P $KEY_PASSWORD -T /usr/bin/codesign
 
 echo "Add keychain to keychain-list"
-security list-keychains -s ios-build.keychain
+#security list-keychains -s ios-build.keychain
+security set-key-partition-list -S apple-tool:,apple: -s -k travis ios-build.keychain
