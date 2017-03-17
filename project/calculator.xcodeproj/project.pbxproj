@@ -212,7 +212,7 @@
 				TargetAttributes = {
 					CB441FFB1DFE9A1000307CFF = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = K7C399XTGR;
+						DevelopmentTeam = J67E9B6234;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E74E818F1DD1FD210046E0DB;
@@ -225,7 +225,6 @@
 					};
 					E74E81AE1DD1FD220046E0DB = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = K7C399XTGR;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E74E818F1DD1FD210046E0DB;
@@ -349,7 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = K7C399XTGR;
+				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -365,7 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = K7C399XTGR;
+				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -528,12 +527,15 @@
 					"$(ARCHS_STANDARD)",
 					armv7s,
 				);
-				DEVELOPMENT_TEAM = K7C399XTGR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = calculatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.petri.calculator.calculatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = calculator;
 			};
@@ -547,11 +549,14 @@
 					"$(ARCHS_STANDARD)",
 					armv7s,
 				);
-				DEVELOPMENT_TEAM = K7C399XTGR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = calculatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petri.calculator.calculatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = calculator;
 			};
