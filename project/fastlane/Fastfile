@@ -34,8 +34,8 @@ platform :ios do
       scheme: 'calculator',
       destination: 'generic/platform=iOS',
       configuration: 'Development',
-      #xcargs: " build-for-testing")
-      xcargs: "build")
+      xcargs: " build-for-testing")
+      #'xcargs: "build")
       sh 'echo "creating .ipa file this may take some minutes"'
       _script_ipa = "/Users/hchukwuji/Documents/workspace/ios-projects/xcuitest-github/xctest-xcuitest-project/scripts/zip_to_ipa.sh"
       system("sh #{_script_ipa}")
