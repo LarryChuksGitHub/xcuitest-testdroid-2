@@ -8,9 +8,22 @@ notifications:
 before_install:
   - gem update fastlane --no-ri --no-rdoc --no-document
 
-script:
+before_script:
 - ./scripts/add-keys.sh
+
+after_script:
+- ./scripts/remove-key.sh
+
+script:
 - ./scripts/start_fastlane.sh
 
-after_failure: 
+after_failure:
+
+env:
+  global:
+  - APPNAME="calculator"
+  - 'DEVELOPER_NAME="iPhone Distribution: Hilary Chukwuji (HXU8W7567B)"'
+  - PROFILE_UUID=5b3272c2-b715-4c5c-946f-e4e9c73db495
+
+
 #- ./scripts/save_travis_log.sh
