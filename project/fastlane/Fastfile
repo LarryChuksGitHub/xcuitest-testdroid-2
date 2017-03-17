@@ -29,7 +29,7 @@ platform :ios do
   desc "build for testing"
   lane :buildTesting do
     xcodebuild(
-      derivedDataPath: "app",
+      derivedDataPath: "project/app",
       clean: true,
       scheme: 'calculator',
       destination: 'generic/platform=iOS',
