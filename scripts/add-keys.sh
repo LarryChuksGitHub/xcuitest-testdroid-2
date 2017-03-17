@@ -23,4 +23,5 @@ cp ./scripts/profile/* ~/Library/MobileDevice/Provisioning\ Profiles/
 
 echo "Add keychain to keychain-list"
 security list-keychains -s ios-build.keychain
-#security set-key-partition-list -S apple-tool:,apple: -s -k travis ios-build.keychain
+#security set-key-partition-list ...
+security set-key-partition-list -S apple-tool:,apple: -s -k travis ios-build.keychain
