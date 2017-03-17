@@ -4,3 +4,4 @@
 *temporary
 *Dockerfile
 project/fastlane/Appfile
+!scripts/profile
