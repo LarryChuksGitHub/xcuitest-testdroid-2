@@ -26,11 +26,20 @@ platform :ios do
     scan
   end
 
+
+  #desc "clean the project codesign"
+  #update_project_codesigning(path: "calculator.xcodeproj",use_automatic_signing: false)
+  #xcodebuild -alltargets clean
+  #update_project_codesigning(path: "calculator.xcodeproj",use_automatic_signing: true)
+
+  #end
+
+
   desc "build for testing"
   lane :buildTesting do
     xcodebuild(
-      derivedDataPath: "project/app",
       clean: true,
+      derivedDataPath: "project/app",
       scheme: 'calculator',
       destination: 'generic/platform=iOS',
       configuration: 'Development',

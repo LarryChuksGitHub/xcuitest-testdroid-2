@@ -225,6 +225,7 @@
 					};
 					E74E81AE1DD1FD220046E0DB = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J67E9B6234;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E74E818F1DD1FD210046E0DB;
@@ -543,7 +544,7 @@
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
@@ -566,7 +567,7 @@
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zalando.calculatorUITests;
