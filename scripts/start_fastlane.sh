@@ -1,3 +1,4 @@
 #!/bin/bash
 
-project/fastlane fastlane buildTesting
+cd project/fastlane
+fastlane buildTesting
