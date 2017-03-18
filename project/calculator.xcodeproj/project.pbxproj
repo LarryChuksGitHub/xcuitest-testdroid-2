@@ -349,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -365,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -479,7 +481,7 @@
 					armv7s,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculator/Info.plist;
 				INSTALL_GROUP = "";
