@@ -5,3 +5,4 @@
 *Dockerfile
 project/fastlane/Appfile
 !scripts/profile
+project/app/*
