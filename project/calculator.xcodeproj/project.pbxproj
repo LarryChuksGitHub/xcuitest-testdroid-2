@@ -349,7 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -367,7 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorTests/Info.plist;
@@ -457,7 +457,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -490,7 +490,7 @@
 					armv7s,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculator/Info.plist;
@@ -516,6 +516,7 @@
 					armv7s,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zalando AG";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				ENABLE_TESTABILITY = YES;
@@ -540,7 +541,7 @@
 					"$(ARCHS_STANDARD)",
 					armv7s,
 				);
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hilary Chukwuji (HXU8W7567B)";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorUITests/Info.plist;
@@ -563,7 +564,7 @@
 					"$(ARCHS_STANDARD)",
 					armv7s,
 				);
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zalando AG";
 				DEVELOPMENT_TEAM = J67E9B6234;
 				INFOPLIST_FILE = calculatorUITests/Info.plist;
