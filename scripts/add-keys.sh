@@ -9,7 +9,7 @@ security import ./scripts/certs/apple.cer -k ~/Library/Keychains/ios-build.keych
 security import ./scripts/certs/dist.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
 security import ./scripts/certs/dist-key.p12 -k ~/Library/Keychains/ios-build.keychain -P $KEY_PASSWORD -T /usr/bin/codesign
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-cp ./scripts/travis/profile/* ~/Library/MobileDevice/Provisioning\ Profiles/
+cp ./scripts/profile/* ~/Library/MobileDevice/Provisioning\ Profiles/
 
 
 #KEY_CHAIN=ios-build.keychain
@@ -31,8 +31,8 @@ cp ./scripts/travis/profile/* ~/Library/MobileDevice/Provisioning\ Profiles/
 #security import ./scripts/certs/dist-key.p12 -k $LIB_KEY_CHAIN -P $KEY_PASSWORD -T /usr/bin/codesign
 
 
-mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-cp ./scripts/profile/* ~/Library/MobileDevice/Provisioning\ Profiles/
+#mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+#cp ./scripts/profile/* ~/Library/MobileDevice/Provisioning\ Profiles/
 
 echo "Add keychain to keychain-list"
 security list-keychains -s ios-build.keychain
