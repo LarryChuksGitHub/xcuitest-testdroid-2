@@ -71,9 +71,9 @@ platform :ios do
       _script_launch_xcuitest = "/Users/hchukwuji/Documents/workspace/ios-projects/xcuitest-github/xctest-xcuitest-project/scripts/launch-xcuitest.sh"
       system("sh #{_script_launch_xcuitest}")
 
-      delete_keychain(
-        name: keychain_name
-      )
+      #delete_keychain(
+        #name: keychain_name
+      #)
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
