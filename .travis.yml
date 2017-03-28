@@ -1,29 +1,20 @@
 language: objective-c
 cached: cocoapods
 osx_image: xcode8.2
-
 notifications:
   email: false
-
 before_install:
-  - gem update fastlane --no-ri --no-rdoc --no-document
-
+- gem update fastlane --no-ri --no-rdoc --no-document
 before_script:
-- ./scripts/add-keys.sh
-
+#- openssl aes-256-cbc -k $ENCRYPTION_PASSWORD -in scripts/certs/dist-key.p12.enc -d -a -out scripts/certs/dist-key.p12
+- "./scripts/add-keys.sh"
 after_script:
-- ./scripts/remove-key.sh
-
+- "./scripts/remove-key.sh"
 script:
-- ./scripts/start_fastlane.sh
-
+- "./scripts/start_fastlane.sh"
 after_failure:
-
 env:
   global:
-  #- APPNAME="calculator"
-  #- 'DEVELOPER_NAME="iPhone Distribution: Hilary Chukwuji (AY23N298ZB)"'
-  #- PROFILE_UUID=5b3272c2-b715-4c5c-946f-e4e9c73db495
-
-
-#- ./scripts/save_travis_log.sh
+  - secure: PovouZekI7NiZWZ1Kug/TQYbBr2M7RVLtqNcnADuQ4Pr0hI+hd0RN80T6wN0flk2S0w1ERPhNxuZgDYCkYQ3XoazE8HUwsBJip0YpcQ3Bid88WB+3t5rJbjxWvEoku1OPA+geBQECgnG6xemj+83UlHZTP5RXAZks0FufESUTpG0X/B/4eHAyd+BL0TteQZ2nNWHAGEQmncLKWIH/xhTN2mQ0mSsq1AZ3Cv30pq4NOEdzhb4hImBbZM21s0nserBFtjUZPSV5pyhlXTdAKyRWCI2TqneyPyJximDgfnJAuuaZ+sJaUe3yNKUBlHqmaIFw2JZEr/xNPK9HBxxPFGRFiRKztTTDHsNFfhCtCzmYyuO+jF5UClp9AJq+/uwardw9zXCHgMQhIM4dqiEsbYj99QKF04PT7kBAYKGG6mPowi3J4ABXN+KBfMW6BWroS5k0NuZ6SNqXur0PJhksJgk0UNlFOQkFe7VahRIhqQ1gnD4aWlus3hb1diIdrqUvGI9Nnv5z0kDRpWhKm/1NcoRJzmL9tHS9DRmf9H7/xW0g+ag0lxBIs9WyQTLtQAlordjzxelVH9XIv/j2Z/lKw3jGdPtx9b0peiBbYaxrrro9rakXCR76vQ2YU0dt7iisif5EljXBU7zyEbSn859U1ud104QUSZFHxfnSX3P1YA7v9U=
+  - secure: uauxacqeQ6l+YMjkwO5vmgq4cNU4VRH73yGuShSXSd53yKggoGAxBeutIhRx8h1RmsZpqPC4hgGFMNnyXROI+sk9stXpaY39grwRjpyUwm4cvNrfi2aPnHdctLVyk6TZvSM9rxEQcIbjl4xz1XbMOS8q+EbyvJjMkGW58k0s/CrNOEUmiLT6Mmo68NTeICcuGEiB1fv6RxYJRXMs+B6Xsqp9cN9HcgfK5548Fz7oe6Oge1FiYK+Rji/HqW20NTP9WNemxOQSTus0061NeIVRl4y1HcmYxW6Rj99neqtdNHFA+yUK9P67tUFRrEkLoJ6eD0GASahHDYh1DVXspGilDCAGSIFv4T8KG8GUnppk0DgrgDRaxgGeKJYGa/qidGyny0FYz9FjRpHgn8ObZjsoww9tbnqqPTxiAtXr1Vuim1BlHOP0wiHH3QkbrLv0zqo7fr9+89ACh8dFzaDdlKfUGACX4O8eKDcFnzWGk2/gKemkiCmR9n1DziB47ri6NomrgQn43ixOPNCvXVSqFCoouGuCletjKlUrTN1MMnhytwaPP89IXhPKhqyioPtN7YmMt7G3/Y+uGcOUP6dcaf6cGEtnQWV2tCXndfB6aFVOa/8WGg36OhS1LbpCJRqwrU4Oe8cxl8kGPl84FNlf+V65EReqM31jXc3LQ8D275htM4Q=
+  - secure: fUL25NMs1cuLBSBnTv8jM03vtiCDmV/qELY76RP4pIsu1lO1/UzcM6wHMnaqDXSoIiikeIAJeEyS46rwxhZC5XIbKT1GO0qmjKCiemrs5WFElRZ17b15J6FXjcxKlmYgAeU7QM3iivOX5o00fMytzjaxr7v8iWx+/+vLTVJ7NeZBw/3BUlC97pLs5y1fSHl7L0pEbN9eXChCmE40Bi8poblfDtblj6Z2jTL2/SuFNWakK9D02SigA4LqXsBRegm/H+86e+Xn+tLxzOJVbl0LSRsrG7tWK7fzae8UKwlnmzTAaQ7xuJkm/h5od+1QkBGkKthaU2tl2UP7VAbhkmNxH/+AH73R3CEzYpYzC/utLnBClJ2dfl3mRqucxQrRIMLYNKlx/2UX4JG1X/kQCNgunHFaa5jaLPc+R8/J2DcPy/F1q5S4Jxmh2jcZwdUHMdR2iEDalpzl9tuupl5u148eH9c6364li/y5VycOM2bkpZL4JmrrLldGOX3tGd9PTWkZBVqyM1AXBbV2elPg0zynnIXT3RrgDbJixYv4IjcGYZg9yR1t9ErN0AlVEj/z2lGTTh4yiWjT/9MSS6mgUUQLRrd9/Kw+9aSLfkChHX01jEdmOBNL+DFLd+H39Y3whA0cR6AWulXjKOpVFjmHkChtV89hEHbxM1NRLn4KPWgQFjU=

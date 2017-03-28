@@ -1,4 +1,2 @@
-app_identifier "com.petri.calculator.calculator" # The bundle identifier of your app
+app_identifier "com.zalando.calculator" # The bundle identifier of your app
 apple_id "hilary.chukwuji@zalando.de" # Your Apple email address
-
-

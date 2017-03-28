@@ -26,17 +26,36 @@ platform :ios do
     scan
   end
 
-
-  #desc "clean the project codesign"
-  #update_project_codesigning(path: "calculator.xcodeproj",use_automatic_signing: false)
-  #xcodebuild -alltargets clean
-  #update_project_codesigning(path: "calculator.xcodeproj",use_automatic_signing: true)
-
-  #end
-
-
   desc "build for testing"
   lane :buildTesting do
+
+    #keychain_name = "ios-build"
+
+    #create_keychain(
+      #name: keychain_name,
+    #  default_keychain: true,
+      #unlock: true,
+      #timeout: 3600,
+      #lock_when_sleeps: true,
+      #password: SecureRandom.base64
+  #  )
+
+  # Import distribution certificate
+    #import_certificate(
+      #certificate_path: "/Users/hchukwuji/Documents/workspace/ios-projects/xcuitest-github/xctest-xcuitest-project/scripts/certs/dist-key.p1",
+      #certificate_password: ENV["KEY_PASSWORD"],
+      #keychain_name: keychain_name
+    #)
+
+    # Fetch provisioning profile
+    #sigh(
+      #adhoc: true,
+      #username: "hilary.chukwuji@zalando.de",
+      #team_id: "J67E9B6234",
+      #provisioning_name: "Calculator Distribution",
+      #cert_id: "HXU8W7567B"
+    #)
+
     xcodebuild(
       clean: true,
       derivedDataPath: "project/app",
@@ -51,6 +70,10 @@ platform :ios do
       sh 'echo "launching XCUITest on the Testdroid Cloud"'
       _script_launch_xcuitest = "/Users/hchukwuji/Documents/workspace/ios-projects/xcuitest-github/xctest-xcuitest-project/scripts/launch-xcuitest.sh"
       system("sh #{_script_launch_xcuitest}")
+
+      delete_keychain(
+        name: keychain_name
+      )
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"

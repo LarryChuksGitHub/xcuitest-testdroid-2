@@ -6,3 +6,4 @@
 project/fastlane/Appfile
 !scripts/profile
 project/app/*
+scripts/local_config.sh
