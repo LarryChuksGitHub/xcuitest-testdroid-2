@@ -28,7 +28,9 @@ platform :ios do
 
   desc "build for testing"
   lane :buildTesting do
-
+    cert
+    sigh
+    gym
     #keychain_name = "ios-build"
 
     #create_keychain(
