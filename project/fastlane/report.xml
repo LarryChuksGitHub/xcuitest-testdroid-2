@@ -5,27 +5,27 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.003132">
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.002109">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.003012">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.001748">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: xcodebuild" time="62.798633">
+      <testcase classname="fastlane.lanes" name="2: xcodebuild" time="56.537968">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: echo &quot;creating .ipa file this may take some minutes&quot;" time="0.021785">
+      <testcase classname="fastlane.lanes" name="3: echo &quot;creating .ipa file this may take some minutes&quot;" time="0.01142">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: echo &quot;launching XCUITest on the Testdroid Cloud&quot;" time="0.014348">
+      <testcase classname="fastlane.lanes" name="4: echo &quot;launching XCUITest on the Testdroid Cloud&quot;" time="0.007949">
         
       </testcase>
     
