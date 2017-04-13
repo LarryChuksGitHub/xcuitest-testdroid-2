@@ -35,10 +35,10 @@ platform :ios do
       configuration: 'Development',
       xcargs: " build-for-testing")
       sh 'echo "creating .ipa file this may take some minutes"'
-      _script_ipa = "/Users/hchukwuji/Documents/workspace/ios-projects/xctest-xcuitest-project/zip_to_ipa.sh"
+      _script_ipa = "/Users/Documents/workspace/ios-projects/xctest-xcuitest-project/zip_to_ipa.sh"
       system("sh #{_script_ipa}")
       sh 'echo "launching XCUITest on the Testdroid Cloud"'
-      _script_launch_xcuitest = "/Users/hchukwuji/Documents/workspace/ios-projects/xctest-xcuitest-project/launch-xcuitest.sh"
+      _script_launch_xcuitest = "/Users/Documents/workspace/ios-projects/xctest-xcuitest-project/launch-xcuitest.sh"
       system("sh #{_script_launch_xcuitest}")
   end
 
