@@ -209,10 +209,31 @@ if [ -z ${TESTRUN_ID} ] ; then
     echo "TESTRUN_ID not gotten, the test probably wasn't launched properly.. exiting."
     exit
 else
-    echo "Testrun ID: ${TESTRUN_ID}"
+    echo "TESTRUN_ID: ${TESTRUN_ID}"
 
 fi
 
+#create session
+DEVICE_SESSION_ID="$(curl -sSL -H "Accept: application/json" -u ${API_KEY}: "${API_ENDPOINT}/api/v2/me/projects/${PROJECT_ID}/runs/${TESTRUN_ID}/device-sessions" | jq .data[0].id)"
+echo "DEVICE_SESSION_ID: ${DEVICE_SESSION_ID}"
+
 # Replace 'com/cloud' with 'com' from the end, if it exists due to private cloud API endpoint.
 API_ENDPOINT=${API_ENDPOINT//com\/cloud/com}
-echo "TEST DONE! The test results are available at ${API_ENDPOINT}/#service/testrun/${PROJECT_ID}/${TESTRUN_ID}"
+echo "TEST RUNNING! The test status is available at ${API_ENDPOINT}/#service/testrun/${PROJECT_ID}/${TESTRUN_ID}"
+
+TESTRUN_STATE="$(curl -sSL -H "Accept: application/json" -u ${API_KEY}: "${API_ENDPOINT}/api/v2/me/projects/${PROJECT_ID}/runs/${TESTRUN_ID}/device-sessions" | python -m json.tool | sed -n -e '/"state":/ s/^.* \(.*\),.*/\1/p')"
+TESTRUN_STATE_ONLY=`echo ${TESTRUN_STATE} | sed -e 's/^"//' -e 's/"$//'`
+echo "TESTRUN_STATE_ONLY: ${TESTRUN_STATE_ONLY}"
+#
+while [[ ${TESTRUN_STATE_ONLY} != "SUCCEEDED" ]]; do
+  sleep 60
+  TESTRUN_STATE="$(curl -sSL -H "Accept: application/json" -u ${API_KEY}: "${API_ENDPOINT}/api/v2/me/projects/${PROJECT_ID}/runs/${TESTRUN_ID}/device-sessions" | python -m json.tool | sed -n -e '/"state":/ s/^.* \(.*\),.*/\1/p')"
+  TESTRUN_STATE_ONLY=`echo ${TESTRUN_STATE} | sed -e 's/^"//' -e 's/"$//'`
+  echo "${TESTRUN_STATE_ONLY}"
+done
+
+JUNIT_TEST_RESULT="$(curl -sSL -H "Accept: application/json" -u ${API_KEY}: "${API_ENDPOINT}/api/v2/me/projects/${PROJECT_ID}/runs/${TESTRUN_ID}/device-sessions/${DEVICE_SESSION_ID}/junit.xml")"
+echo "JUNIT_TEST_RESULT: ${JUNIT_TEST_RESULT}"
+
+DEVICE_SESSION_LOG="$(curl -sSL -H "Accept: application/json" -u ${API_KEY}: "${API_ENDPOINT}/api/v2/me/projects/${PROJECT_ID}/runs/${TESTRUN_ID}/device-sessions/${DEVICE_SESSION_ID}/logs")"
+echo "DEVICE_SESSION_LOG: ${DEVICE_SESSION_LOG}"
